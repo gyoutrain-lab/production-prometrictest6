@@ -181,11 +181,26 @@
     <span>| Critical Care and Emergency</span>
     <span>| Pharmacology</span>
     <span>| Behavioral, Ethics, and Infection Control</span>
-  </div>
-  <!-- Fixed Bottom Buttons -->
-  <div class="bottom-buttons">
-    <button onclick="startQuiz()">Start Quiz</button>
-  </div>
+ <!-- Fixed Bottom Buttons -->
+<div class="bottom-buttons" style="position: fixed; bottom: 20px; width: 100%; text-align: center;">
+    <button onclick="startQuiz()" 
+            style="
+                background: linear-gradient(145deg, #ffcc33, #ff6600);
+                color: white;
+                font-size: 1.2em;
+                font-weight: bold;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.2),
+                            -4px -4px 8px rgba(255,255,255,0.3);
+                cursor: pointer;
+                transition: transform 0.1s, box-shadow 0.2s;
+            ">
+        Start Test
+    </button>
+</div>
+
 
  <!-- Dana QR Fixed -->
 <div class="dana-qr" 
