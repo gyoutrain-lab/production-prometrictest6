@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nursing Prometric Simulation Test Dashboard</title>
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <style>
   * { box-sizing: border-box; margin:0; padding:0; }
   body, html { width:100%; height:100%; font-family:Arial,sans-serif; }
@@ -97,12 +99,20 @@ function startQuiz(){
   const quizIframe = document.getElementById("quizIframe");
   quizIframe.src = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
   quizModal.style.display = "flex";
+
+  // Confetti animation
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ['#ff0a54','#ff477e','#ff7096','#ff85a1','#fbb1b1','#f9bec7','#f7cad0','#fae0e4']
+  });
 }
 
 function closeQuiz(){
   document.getElementById("quizModal").style.display = "none";
-  document.getElementById("landingPage").style.filter = "none"; // remove blur
-  document.getElementById("quizIframe").src = ""; // stop quiz
+  document.getElementById("landingPage").style.filter = "none";
+  document.getElementById("quizIframe").src = "";
 }
 </script>
 
