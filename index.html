@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nursing Prometric Simulation Test Dashboard</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
       width: 100%;
       height: 100%;
@@ -34,7 +29,7 @@
       position: relative;
       width: 100%;
       text-align: center;
-      margin-top: -50px; /* overlap slightly over the top image */
+      margin-top: -50px; 
       padding: 40px 20px;
       z-index: 2;
       color: #fff;
@@ -61,11 +56,13 @@
       font-size: 2rem;
       margin-bottom: 10px;
       font-weight: bold;
+      color: #8B0000; /* Dark Red */
     }
 
     .title-container h2 {
       font-size: 1rem;
       font-weight: normal;
+      color: #B8860B; /* Dark Gold */
     }
 
     /* Middle Section */
@@ -75,44 +72,59 @@
     }
 
     .social {
-      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
     }
 
-    .social a {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    .social img {
+    .social a img {
       width: 40px;
       height: 40px;
       transition: transform 0.3s;
     }
 
-    .social img:hover {
+    .social a img:hover {
       transform: scale(1.2);
+    }
+
+    /* Test Items - horizontal and adaptive */
+    .test-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 23px;
+      color: #1E3A8A;
+      font-weight: 500;
+      margin-top: 10px;
     }
 
     /* Bottom Fixed Buttons */
     .bottom-buttons {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      width: 100%;
+      text-align: center;
     }
 
     .bottom-buttons button {
-      padding: 12px 25px;
-      font-size: 1rem;
+      background: linear-gradient(145deg, #ffcc33, #ff6600);
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 12px 30px;
       border: none;
       border-radius: 10px;
-      background: #74ebd5;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2), -4px -4px 8px rgba(255,255,255,0.3);
       cursor: pointer;
-      transition: 0.3s;
+      transition: transform 0.1s, box-shadow 0.2s;
     }
 
     .bottom-buttons button:hover {
-      background: #ACB6E5;
-      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 10px rgba(0,0,0,0.3), -6px -6px 10px rgba(255,255,255,0.4);
     }
 
     /* Dana QR Fixed */
@@ -120,33 +132,24 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
+      width: 150px;
+      height: auto;
+      z-index: 1000;
     }
 
     .dana-qr img {
-      width: 80px;
-      height: 80px;
+      width: 100%;
+      height: auto;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .title-container h1 {
-        font-size: 1.5rem;
-      }
-      .title-container h2 {
-        font-size: 0.9rem;
-      }
-      .social img {
-        width: 35px;
-        height: 35px;
-      }
-      .dana-qr img {
-        width: 60px;
-        height: 60px;
-      }
-      .bottom-buttons button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
+      .title-container h1 { font-size: 1.5rem; }
+      .title-container h2 { font-size: 0.9rem; }
+      .social a img { width: 35px; height: 35px; }
+      .dana-qr { width: 100px; }
+      .test-items { font-size: 18px; }
+      .bottom-buttons button { padding: 10px 20px; font-size: 1em; }
     }
   </style>
 </head>
@@ -156,11 +159,10 @@
   <div class="top-image"></div>
 
   <!-- Title with flowing background -->
- <div class="title-container" style="color: red;">
+  <div class="title-container">
     <h1>Nursing Prometric Actual Simulation Test</h1>
     <h2>Based on the Prometric/SMLE Saudi Arabia and NCLEX test materials, adapted by Giyono Asfarrasyid, ETK Yogyakarta</h2>
-</div>
-
+  </div>
 
   <!-- Middle / Social Section -->
   <div class="middle">
@@ -171,50 +173,28 @@
       <a href="https://web.facebook.com/gyouskill/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
       <a href="https://www.instagram.com/etkyogya"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
     </div>
+
+    <!-- Test Items - Horizontal, Adaptive -->
+    <div class="test-items">
+      <span>| Fundamental</span>
+      <span>| Medical Surgical</span>
+      <span>| Maternity and Obstetric</span>
+      <span>| Pediatric</span>
+      <span>| Critical Care and Emergency</span>
+      <span>| Pharmacology</span>
+      <span>| Behavioral, Ethics, and Infection Control</span>
+    </div>
   </div>
 
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; font-size:15px; color:#1E3A8A; font-weight:500;">
-    <span>| Fundamental</span>
-    <span>| Medical Surgical</span>
-    <span>| Maternity and Obstetric</span>
-    <span>| Pediatric</span>
-    <span>| Critical Care and Emergency</span>
-    <span>| Pharmacology</span>
-    <span>| Behavioral, Ethics, and Infection Control</span>
- <!-- Fixed Bottom Buttons -->
-<div class="bottom-buttons" style="position: fixed; bottom: 20px; width: 100%; text-align: center;">
-    <button onclick="startQuiz()" 
-            style="
-                background: linear-gradient(145deg, #ffcc33, #ff6600);
-                color: white;
-                font-size: 1.2em;
-                font-weight: bold;
-                padding: 12px 30px;
-                border: none;
-                border-radius: 10px;
-                box-shadow: 4px 4px 8px rgba(0,0,0,0.2),
-                            -4px -4px 8px rgba(255,255,255,0.3);
-                cursor: pointer;
-                transition: transform 0.1s, box-shadow 0.2s;
-            ">
-        Start Test
-    </button>
-</div>
+  <!-- Fixed Bottom Buttons -->
+  <div class="bottom-buttons">
+    <button onclick="startQuiz()">Start Test</button>
+  </div>
 
-
- <!-- Dana QR Fixed -->
-<div class="dana-qr" 
-     style="position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            width: 150px; /* adjust size */
-            height: auto; 
-            z-index: 1000;">
-    <img src="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/danaqr.png" 
-         alt="danaqr" 
-         style="width: 100%; height: auto;">
-</div>
-
+  <!-- Dana QR Fixed -->
+  <div class="dana-qr">
+    <img src="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/danaqr.png" alt="danaqr">
+  </div>
 
   <script>
     function startQuiz() {
