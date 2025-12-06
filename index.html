@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nursing Prometric Simulation Test Dashboard</title>
+
+  <!-- Open Graph for Social Media Thumbnails -->
+  <meta property="og:title" content="Nursing Prometric Simulation Test Dashboard">
+  <meta property="og:description" content="700 Nurse Technician Test Items: Fundamental, Medical Surgical, Maternity & Obstetric, Pediatric, Critical Care, Pharmacology, Behavioral & Ethics. Adapted by Giyono Asfarrasyid, ETK Yogyakarta">
+  <meta property="og:image" content="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView1.jpg">
+  <meta property="og:url" content="https://your-github-pages-url/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nursing Prometric Simulation Test Dashboard">
+  <meta name="twitter:description" content="700 Nurse Technician Test Items: Fundamental, Medical Surgical, Maternity & Obstetric, Pediatric, Critical Care, Pharmacology, Behavioral & Ethics. Adapted by Giyono Asfarrasyid, ETK Yogyakarta">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView1.jpg">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
@@ -79,8 +93,8 @@
     }
 
     .social a img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       transition: transform 0.3s;
     }
 
@@ -111,9 +125,9 @@
     .bottom-buttons button {
       background: linear-gradient(145deg, #ffcc33, #ff6600);
       color: white;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: bold;
-      padding: 12px 30px;
+      padding: 14px 28px;
       border: none;
       border-radius: 10px;
       box-shadow: 4px 4px 8px rgba(0,0,0,0.2), -4px -4px 8px rgba(255,255,255,0.3);
@@ -155,7 +169,7 @@
     }
 
     #quizFrame {
-      width: 90%;
+      width: 95%;
       height: 90%;
       border: none;
       border-radius: 10px;
@@ -181,11 +195,16 @@
     @media (max-width: 768px) {
       .title-container h1 { font-size: 1.5rem; }
       .title-container h2 { font-size: 0.9rem; }
-      .social a img { width: 35px; height: 35px; }
+      .social a img { width: 40px; height: 40px; }
       .dana-qr { width: 100px; }
       .test-items { font-size: 18px; }
-      .bottom-buttons button { padding: 10px 20px; font-size: 1em; }
+      .bottom-buttons button { font-size: 1.1em; padding: 12px 25px; }
       #quizFrame { width: 95%; height: 85%; }
+    }
+
+    @media (max-width: 480px) {
+      .social a img { width: 35px; height: 35px; }
+      .bottom-buttons button { font-size: 1em; padding: 10px 20px; }
     }
   </style>
 </head>
@@ -240,7 +259,6 @@
 
   <script>
     function startQuiz() {
-      // Ask user for Name and WhatsApp
       const userName = prompt("Enter your Name:");
       const userWA = prompt("Enter your WhatsApp number (include country code, e.g., 62812xxxx)");
 
@@ -252,17 +270,15 @@
       // WhatsApp message to admin
       const adminWA = "6285399652487";
       const message = `Payment Confirmation, User Name: ${userName}, WA#: ${userWA}, Share Proof QR IDR 50k to get the Unlock Code`;
-      const waLink = `https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`;
-      window.open(waLink, "_blank");
+      window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`, "_blank");
 
-      // Show overlay with quiz
+      // Show quiz overlay
       const quizURL = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
       document.getElementById("quizFrame").src = quizURL;
       document.getElementById("quizOverlay").style.display = "flex";
     }
 
     function closeQuiz() {
-      // Close overlay
       document.getElementById("quizOverlay").style.display = "none";
       document.getElementById("quizFrame").src = "";
     }
