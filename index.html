@@ -176,7 +176,7 @@
 
     <!-- Test Items - Horizontal, Adaptive -->
     <div class="test-items">
-      <span>| Fundamental</span>
+      <span>} Fundamental</span>
       <span>| Medical Surgical</span>
       <span>| Maternity and Obstetric</span>
       <span>| Pediatric</span>
@@ -215,8 +215,12 @@
       // Open WhatsApp in new tab
       window.open(waLink, "_blank");
 
-      // Redirect to quiz page
-      window.location.href = "quiz.html";
+      // Hide dashboard
+      document.body.innerHTML = "<p style='text-align:center; margin-top:50px;'>Loading Quiz...</p>";
+
+      // Redirect to Google Apps Script Quiz
+      const quizURL = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
+      window.location.href = quizURL;
     }
   </script>
 
