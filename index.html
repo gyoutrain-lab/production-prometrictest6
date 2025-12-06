@@ -172,7 +172,7 @@
       <a href="https://www.instagram.com/etkyogya"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
     </div>
   </div>
-!-- Test Items Info - horizontal and adaptive -->
+
   <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; font-size:15px; color:#1E3A8A; font-weight:500;">
     <span>| Fundamental</span>
     <span>| Medical Surgical</span>
@@ -187,10 +187,19 @@
     <button onclick="startQuiz()">Start Quiz</button>
   </div>
 
-  <!-- Dana QR Fixed -->
-  <div class="dana-qr">
-    <img src="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/danaqr.png" alt="danaqr">
-  </div>
+ <!-- Dana QR Fixed -->
+<div class="dana-qr" 
+     style="position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            width: 150px; /* adjust size */
+            height: auto; 
+            z-index: 1000;">
+    <img src="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/danaqr.png" 
+         alt="danaqr" 
+         style="width: 100%; height: auto;">
+</div>
+
 
   <script>
     function startQuiz() {
