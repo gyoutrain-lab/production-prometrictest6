@@ -1,21 +1,210 @@
-<div class="middle">
-  <!-- Social icons container -->
-  <div class="social" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
-    <a href="tel:+6285399652487"><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone" style="width:40px; height:40px;"></a>
-    <a href="https://wa.me/6285399652487"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:40px; height:40px;"></a>
-    <a href="mailto:gyoutrain@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:40px; height:40px;"></a>
-    <a href="https://web.facebook.com/gyouskill/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width:40px; height:40px;"></a>
-    <a href="https://www.instagram.com/etkyogya"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" style="width:40px; height:40px;"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursing Prometric Simulation Test Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+
+    /* Top Image */
+    .top-image {
+      width: 100%;
+      height: 50vh;
+      background: url('https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView1.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Title Overlay with Flowing Background */
+    .title-container {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin-top: -50px; /* overlap slightly over the top image */
+      padding: 40px 20px;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .title-container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2.jpg') repeat;
+      background-size: cover;
+      opacity: 0.3;
+      z-index: -1;
+      animation: flow 30s linear infinite;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .title-container h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .title-container h2 {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    /* Middle Section */
+    .middle {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Bottom Fixed Buttons */
+    .bottom-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .bottom-buttons button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: #74ebd5;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .bottom-buttons button:hover {
+      background: #ACB6E5;
+      color: #fff;
+    }
+
+    /* Dana QR Fixed */
+    .dana-qr {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .dana-qr img {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .title-container h1 {
+        font-size: 1.5rem;
+      }
+      .title-container h2 {
+        font-size: 0.9rem;
+      }
+      .social img {
+        width: 35px;
+        height: 35px;
+      }
+      .dana-qr img {
+        width: 60px;
+        height: 60px;
+      }
+      .bottom-buttons button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Half Image -->
+  <div class="top-image"></div>
+
+  <!-- Title with flowing background -->
+  <div class="title-container">
+    <h1>Nursing Prometric Actual Simulation Test</h1>
+    <h2>Based on the Prometric/SMLE Saudi Arabia and NCLEX test materials, adapted by Giyono Asfarrasyid, ETK Yogyakarta</h2>
   </div>
 
-  <!-- Test Items Info - horizontal and adaptive -->
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; font-size:23px; color:#1E3A8A; font-weight:500;">
-    <span>💠 Fundamental</span>
-    <span>💠 Medical Surgical</span>
-    <span>💠 Maternity and Obstetric</span>
-    <span>💠 Pediatric</span>
-    <span>💠 Critical Care and Emergency</span>
-    <span>💠 Pharmacology</span>
-    <span>💠 Behavioral, Ethics, and Infection Control</span>
+  <!-- Middle / Social Section -->
+  <div class="middle">
+    <div class="social">
+      <a href="tel:+6285399652487"><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone"></a>
+      <a href="https://wa.me/6285399652487"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+      <a href="mailto:gyoutrain@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+      <a href="https://web.facebook.com/gyouskill/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/etkyogya"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+    </div>
   </div>
-</div>
+
+  <!-- Fixed Bottom Buttons -->
+  <div class="bottom-buttons">
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Dana QR Fixed -->
+  <div class="dana-qr">
+    <img src="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/danaqr.png" alt="danaqr">
+  </div>
+
+  <script>
+    function startQuiz() {
+      // Ask user for Name and WhatsApp
+      const userName = prompt("Enter your Name:");
+      const userWA = prompt("Enter your WhatsApp number (include country code, e.g., 62812xxxx)");
+
+      if(!userName || !userWA) {
+        alert("Please provide your Name and WhatsApp number to start the quiz.");
+        return;
+      }
+
+      // WhatsApp message to admin
+      const adminWA = "6285399652487";
+      const message = `Payment Confirmation, User Name: ${userName}, WA#: ${userWA}, Share Proof QR IDR 50k to get the Unlock Code`;
+      const waLink = `https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`;
+
+      // Open WhatsApp in new tab
+      window.open(waLink, "_blank");
+
+      // Redirect to quiz page
+      window.location.href = "quiz.html";
+    }
+  </script>
+
+</body>
+</html>
