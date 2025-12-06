@@ -9,7 +9,7 @@
   body, html { width:100%; height:100%; font-family:Arial,sans-serif; }
 
   /* Landing Page */
-  #landingPage { width:100%; height:100%; background:#f0f0f0; }
+  #landingPage { width:100%; height:100%; background:#f0f0f0; transition: filter 0.3s ease; }
 
   .top-image { width:100%; height:50vh; background: url('https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView1.jpg') no-repeat center center; background-size:cover; }
   .title-container { position:relative; width:100%; text-align:center; margin-top:-50px; padding:40px 20px; color:#fff; }
@@ -30,9 +30,9 @@
   .dana-qr { position:fixed; bottom:20px; right:20px; }
   .dana-qr img { width:80px; height:80px; }
 
-  /* Quiz Modal */
-  #quizModal { display:none; position:fixed; z-index:999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); }
-  #quizModal iframe { width:100%; height:100%; border:none; }
+  /* Quiz Modal Overlay */
+  #quizModal { display:none; position:fixed; z-index:999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter: blur(5px); display:flex; justify-content:center; align-items:center; }
+  #quizModal iframe { width:90%; height:90%; border-radius:15px; border:none; background:#fff; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
   .closeQuiz { position:absolute; top:20px; right:30px; color:#fff; font-size:28px; font-weight:bold; cursor:pointer; z-index:1000; }
   .closeQuiz:hover { color:#f0f0f0; }
 
@@ -42,6 +42,7 @@
     .social img{ width:35px; height:35px; }
     .dana-qr img{ width:60px; height:60px; }
     .bottom-buttons button{ padding:10px 20px; font-size:0.9rem; }
+    #quizModal iframe{ width:95%; height:90%; }
   }
 </style>
 </head>
@@ -71,7 +72,7 @@
   </div>
 </div>
 
-<!-- Quiz Modal -->
+<!-- Quiz Modal Overlay -->
 <div id="quizModal">
   <span class="closeQuiz" onclick="closeQuiz()">×</span>
   <iframe id="quizIframe" src=""></iframe>
@@ -88,13 +89,19 @@ function startQuiz(){
   const message = `Payment Confirmation, User Name: ${userName}, WA#: ${userWA}, Share Proof QR IDR 50k to get the Unlock Code`;
   window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(message)}`, "_blank");
 
-  // Show quiz modal and load Google Apps Script quiz
-  document.getElementById("quizModal").style.display = "block";
-  document.getElementById("quizIframe").src = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
+  // Apply blur to landing page
+  document.getElementById("landingPage").style.filter = "blur(5px) brightness(0.7)";
+
+  // Show quiz modal with Google Apps Script quiz
+  const quizModal = document.getElementById("quizModal");
+  const quizIframe = document.getElementById("quizIframe");
+  quizIframe.src = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
+  quizModal.style.display = "flex";
 }
 
 function closeQuiz(){
   document.getElementById("quizModal").style.display = "none";
+  document.getElementById("landingPage").style.filter = "none"; // remove blur
   document.getElementById("quizIframe").src = ""; // stop quiz
 }
 </script>
