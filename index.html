@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ Injected: Prevent Android auto-zoom shrinking -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <title>Nursing Prometric Simulation Test Dashboard</title>
 
   <!-- Favicon Icon -->
   <link rel="icon" type="image/png"
         href="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png">
 
-  <!-- Social Media Thumbnail (Android, WhatsApp, Facebook) -->
+  <!-- Social Media Thumbnail -->
   <meta property="og:title" content="Nursing Prometric Simulation Test">
   <meta property="og:description" content="700 Nurse Technician Test Items covering 7 core subjects. Adapted by Giyono Asfarrasyid, ETK Yogyakarta.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png">
+  <meta property="og:image"
+        content="https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gyoutrain-lab.github.io/production-prometrictest6/">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nursing Prometric Simulation Test">
   <meta name="twitter:description" content="700 Nurse Technician Test Items covering 7 subjects.">
@@ -33,11 +37,33 @@
       background: #f0f0f0;
     }
 
+    /* ============================================================
+       ✅ INJECTION: Android Full-Scaling Upgrade
+       Makes everything readable and proportionate on phones
+       WITHOUT changing your design
+    ============================================================= */
+    html {
+      font-size: 3.3vw;      /* makes all text scale bigger on Android */
+    }
+
+    @media (min-width: 768px){
+      html { font-size: 16px; }   /* normal size on desktop */
+    }
+
+    button, h1, h2, span {
+      transform-origin: top left;
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+    /* ============================================================ */
+
+
     /* Top Image */
     .top-image {
       width: 100%;
       height: 50vh;
-      background: url('https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png') no-repeat center center;
+      background: url('https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png')
+                  no-repeat center center;
       background-size: cover;
     }
 
@@ -68,13 +94,13 @@
     }
 
     .title-container h1 {
-      font-size: 2rem;
+      font-size: 2rem;     /* scales via vw injection above */
       font-weight: bold;
       color: #8B0000;
     }
 
     .title-container h2 {
-      font-size: 1rem;
+      font-size: 1rem;     /* scales via vw injection above */
       color: #B8860B;
     }
 
@@ -205,13 +231,13 @@
         return;
       }
 
-      // Send message to admin
       const admin = "6285399652487";
       const msg = `Payment Confirmation, User Name: ${name}, WA#: ${wa}, Share Proof QR IDR 50k to get Unlock Code`;
+
       window.open(`https://wa.me/${admin}?text=${encodeURIComponent(msg)}`, "_blank");
 
-      // OPEN QUIZ IN FULL PAGE (best for Android)
-      window.location.href = "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
+      window.location.href =
+        "https://script.google.com/macros/s/AKfycbzro8Lul3sG36KsNNG5UPU2vpvOHHbH2PKFNk4Czp2-fnFiBVNk_gJPtSOJdrobOIvK/exec";
     }
   </script>
 
