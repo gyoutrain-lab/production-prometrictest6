@@ -1,35 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prometric / SMLE Dashboard</title>
 
 <style>
-  body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background:#f5f5f5; }
-  h1 { color:#0b65c2; font-size:24px; }
-  .card { background:white; padding:20px; margin:15px auto; width:92%; max-width:480px; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.1); }
-  .btn { display:block; background:#0b65c2; color:white; padding:14px; margin-top:15px; border-radius:8px; text-decoration:none; font-size:18px; }
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #eef3f8; }
+  h1 { text-align: center; color: #0b65c2; font-size: 28px; margin-top: 25px; }
+  .sub { text-align: center; color: #555; font-size: 16px; margin-top: -10px; }
+
+  .container { width: 92%; max-width: 500px; margin: auto; }
+
+  .card {
+    background: white; padding: 20px; margin: 18px 0;
+    border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .thumb { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+
+  .btn {
+    display: block; background: #0b65c2; color: white;
+    padding: 14px; border-radius: 10px;
+    text-align: center; margin-top: 15px;
+    text-decoration: none; font-weight: bold; font-size: 18px;
+  }
+  .btn:hover { background: #094f93; }
+
+  .buy { background: #25D366; }
+  .buy:hover { background: #1da958; }
+
+  /* Feature List */
+  .features, .why, .value, .social {
+    background: white; padding: 18px; border-radius: 14px;
+    margin: 20px 0; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+  .features h3, .why h3, .value h3, .social h3 {
+    margin-top: 0; color: #0b65c2;
+  }
+  .features p, .why p, .value p, .social p {
+    color: #555; margin: 8px 0;
+  }
+
+  .star { font-size: 22px; color: #ffbb00; }
+
+  .price-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    margin: 20px 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+  .price-box h3 { margin: 0 0 10px; color: #0b65c2; }
+  .price-box p { margin: 6px 0; color: #555; }
+
+  /* Floating WA */
+  .wa-float {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #25D366; color: #fff;
+    padding: 16px 20px; border-radius: 50px;
+    text-decoration: none; font-weight: bold;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
 </style>
 </head>
 
 <body>
 
-<h1>Prometric/SMLE Dashboard</h1>
+<h1>Prometric / SMLE CBT Center</h1>
+<div class="sub">Practice • Master • Pass Your Exam</div>
 
+<div class="container">
+
+<!-- VALUE PROPOSITION -->
+<div class="value">
+  <h3>🔥 Why Students Choose This Exam Simulator</h3>
+  <p>✔ Real Prometric / SMLE-style questions</p>
+  <p>✔ Timer, scoring, and full rationale</p>
+  <p>✔ Closest to the real testing environment</p>
+  <p>✔ Works on all phones (Android/iPhone)</p>
+  <p>✔ No login needed, fast access</p>
+</div>
+
+<!-- FEATURE LIST -->
+<div class="features">
+  <h3>📘 What You Get</h3>
+  <p>• 120-minute exam with 100–150 questions</p>
+  <p>• Detailed explanations (rationale)</p>
+  <p>• Automatic scoring system</p>
+  <p>• Updated clinical cases 2024–2025</p>
+  <p>• Real-time exam pressure simulation</p>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="social">
+  <h3>⭐ Student Feedback</h3>
+  <p><span class="star">★★★★★</span> “Mirip banget sama real exam!”</p>
+  <p><span class="star">★★★★★</span> “Soal dan rationalenya lengkap.”</p>
+  <p><span class="star">★★★★★</span> “Saya lulus setelah pakai ini.”</p>
+</div>
+
+<!-- PRICING -->
+<div class="price-box">
+  <h3>💰 Pricing</h3>
+  <p><b>Rp 75.000</b> — full access</p>
+  <p>Duration: <b>120 minutes</b></p>
+  <p>Including: all questions, scoring, and rationale</p>
+</div>
+
+<!-- DEMO QUIZ -->
 <div class="card">
-  <h2>Demo Quiz (Free)</h2>
-  <a class="btn" href="https://script.google.com/macros/s/AKfycbwQX3XRFHwz5u5t1A8ROqaRO8U0yw019UC19lwQjQYqTmKO9iGhjVqBeBGiGYDKvFkJ/exec">
-    Open Demo Quiz
+  <img src="https://via.placeholder.com/600x300/0b65c2/ffffff?text=FREE+DEMO+PROMETRIC+QUIZ" class="thumb" />
+  <a class="btn" 
+     href="https://script.google.com/macros/s/AKfycbwQX3XRFHwz5u5t1A8ROqaRO8U0yw019UC19lwQjQYqTmKO9iGhjVqBeBGiGYDKvFkJ/exec">
+     ▶ Try FREE Demo
   </a>
 </div>
 
+<!-- REAL TEST -->
 <div class="card">
-  <h2>Real Full Exam</h2>
-  <a class="btn" href="https://gyoutrain-lab.github.io/production-prometrictest6/">
-    Open Real Test
+  <img src="https://via.placeholder.com/600x300/dd0000/ffffff?text=REAL+PROMETRIC+FULL+EXAM" class="thumb" />
+  <a class="btn"
+     href="https://gyoutrain-lab.github.io/production-prometrictest6/">
+     🔒 Start Full Exam
+  </a>
+  <a class="btn buy"
+     href="https://wa.me/6285399652487?text=Halo%20Admin,%20Saya%20ingin%20membeli%20akses%20ujian%20Prometric%20/SMLE.">
+     💬 Buy Access on WhatsApp
   </a>
 </div>
+
+<!-- WHY BUY -->
+<div class="why">
+  <h3>🎯 Why Buy Access?</h3>
+  <p>• Increase pass rate</p>
+  <p>• Train real exam pressure</p>
+  <p>• Identify weak topics</p>
+  <p>• Boost confidence before test day</p>
+</div>
+
+<!-- CTA AGAIN -->
+<a class="btn buy" 
+   href="https://wa.me/6285399652487?text=Halo%20Admin,%20Saya%20ingin%20membeli%20akses%20ujian%20Prometric%20/SMLE.">
+   💬 Chat & Buy Access
+</a>
+
+<br>
+
+<!-- BACK BUTTON -->
+<a href="https://gyoutrain-lab.github.io/production-prometrictest6/" 
+   class="btn" 
+   style="background:#444;">
+   ⬅ Back to Main Page
+</a>
+
+</div>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="wa-float" 
+   href="https://wa.me/6285399652487?text=Halo%20Admin,%20Saya%20ingin%20bertanya%20tentang%20ujian%20Prometric/SMLE.">
+   💬 Chat Admin
+</a>
 
 </body>
 </html>
