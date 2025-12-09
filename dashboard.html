@@ -76,10 +76,38 @@
     text-decoration: none; font-weight: bold;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   }
+  /* === Flowing Water Background (Right Half) === */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.water-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;       /* Half of the dashboard page */
+  height: 100%;
+  background-image: url("https://raw.githubusercontent.com/gyoutrain-lab/production-prometrictest6/main/assets/TView2b.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.28;     /* Transparent water effect */
+  pointer-events: none;
+  z-index: -1;
+  animation: waterMove 18s linear infinite;
+}
+
+@keyframes waterMove {
+  0% { background-position: center top; }
+  50% { background-position: center bottom; }
+  100% { background-position: center top; }
+}
 </style>
 </head>
 
 <body>
+<div class="water-bg"></div>
 
 <h1>Prometric / SMLE CBT Center</h1>
 <div class="sub">Practice • Master • Pass Your Exam</div>
@@ -99,7 +127,8 @@
 <!-- FEATURE LIST -->
 <div class="features">
   <h3>📘 What You Get</h3>
-  <p>• 120-minute exam with 100–150 questions</p>
+  <p>• 120-minute exam with 100–150 questions, 7 batch of test (total 700 test items):</p>
+  <p>• Fundamental, Memdical Surgical, Maternity & Obstetric, Pediatric, Critical Care & Emergency, Pharmacology, Behagioral-Ethic-Infection Control</p> 
   <p>• Detailed explanations (rationale)</p>
   <p>• Automatic scoring system</p>
   <p>• Updated clinical cases 2024–2025</p>
@@ -117,8 +146,8 @@
 <!-- PRICING -->
 <div class="price-box">
   <h3>💰 Pricing</h3>
-  <p><b>Rp 75.000</b> — full access</p>
-  <p>Duration: <b>120 minutes</b></p>
+  <p><b>Rp 50k</b> — full access, upon your setup test options</p>
+  <p>Duration: <b>120 minutes, depending your option setup</b></p>
   <p>Including: all questions, scoring, and rationale</p>
 </div>
 
